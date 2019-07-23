@@ -30,3 +30,9 @@ wget --output-file=wget.log \
      --directory-prefix=out \
      -i instructions.txt    \
         || echo "There was a problem downloading Navy instructions. wget exit status: $?"
+
+# Some PDFs have spaces in their filename, let's strip those out for ease of use
+find out -name '* *.pdf' -type f -print0 | \
+    while read -d $'\0' f;                 \
+        do mv -n "$f" "${f// /_}";         \
+    done
