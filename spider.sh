@@ -15,6 +15,7 @@ mkdir -p out
 wget --output-file=wget.log \
      --quiet                \
      --show-progress        \
+     --user-agent="User-Agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/W.X.Y.Z Safari/537.36"        \
      --xattr                \
      --no-config            \
      --tries=5              \
